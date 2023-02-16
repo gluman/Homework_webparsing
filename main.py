@@ -13,11 +13,18 @@ def get_headers():
     headers = Headers(browser='firefox', os='win')
     return headers.generate()
 
-response = requests.get(HOST)
-response_text = response.text
-print(response_text)
-soup = BeautifulSoup(response_text, features='lxml')
-dataqa = soup.find('vacancy-serp__vacancy_snippet_requirement')
-span = dataqa.findAll('span')
+response = requests.get(HOST, headers=get_headers())
+hh_main = response.text
 
+soup = BeautifulSoup(hh_main, features='lxml')
+main_content = soup.find('div', id='ally-main-content')
+vacances = main_content.findAll('div', class_='vacancy-serp-item__layout')
+
+
+for vanvancy in vacances:
+    description = vanvancy.find('div', ='vacancy-serp__vacancy_snippet_requirement')
+    link
+    compensation
+    company_name
+    city
 print(span.text)
