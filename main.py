@@ -4,11 +4,14 @@ import lxml
 import requests
 from bs4 import BeautifulSoup
 from fake_headers import Headers
-
-# URL 'https://hh.ru/search/vacancy?text=python&area=1&area=2'
-HOST = 'https://hh.ru'
-
 keywords = ['Django', 'Flask']
+
+
+HOST = 'https://hh.ru/search/vacancy?text=python&area=1&area=2'
+
+def get_headers():
+    headers = Headers(browser='firefox', os='win')
+    return headers.generate()
 
 response = requests.get(HOST)
 response_text = response.text
