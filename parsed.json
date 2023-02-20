@@ -1,1 +1,50 @@
-[]
+[
+     {
+          "link": "https://spb.hh.ru/vacancy/77125729?from=vacancy_search_list&query=Python",
+          "compensation": null,
+          "company_name": "ООО ГПМ Партнер",
+          "city": "Москва"
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/75955238?from=vacancy_search_list&query=Python",
+          "compensation": null,
+          "company_name": "ООО ГПМ Партнер",
+          "city": "Москва"
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76649923?from=vacancy_search_list&query=Python",
+          "compensation": null,
+          "company_name": "ПАО «МТС», IT",
+          "city": "Москва, Технопарк"
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76139712?from=vacancy_search_list&query=Python",
+          "compensation": null,
+          "company_name": "Kept (Кэпт)",
+          "city": "Москва"
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76886763?from=vacancy_search_list&query=Python",
+          "compensation": "от 60 000 руб.",
+          "company_name": "ООО Виста",
+          "city": "Санкт-Петербург"
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76443962?from=vacancy_search_list&query=Python",
+          "compensation": "120 000 – 160 000 руб.",
+          "company_name": "ООО Телеком и Микроэлектроник Индастриз",
+          "city": "Санкт-Петербург, Комендантский проспект и еще 2 "
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76220736?from=vacancy_search_list&query=Python",
+          "compensation": null,
+          "company_name": "АО ДОМ.РФ",
+          "city": "Москва, Динамо и еще 1 "
+     },
+     {
+          "link": "https://spb.hh.ru/vacancy/76347578?from=vacancy_search_list&query=Python",
+          "compensation": "от 70 000 руб.",
+          "company_name": "НТЦ Система",
+          "city": "Москва, Красные ворота"
+     }
+]

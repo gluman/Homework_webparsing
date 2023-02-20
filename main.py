@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from fake_headers import Headers
 import json
-keywords = ['Django', 'Flask']
+
 
 
 def get_headers():
@@ -26,11 +26,11 @@ def get_response(n):
 
 pattern1 = f'([Ff]lask)'
 pattern2 = f'([Dd]jango)'
-count = 0
+count = 14
 run = True
 parced = []
 while run:
-    sleep(3)
+    sleep(1)
     content = get_response(count)
     if content:
         soup = BeautifulSoup(content, features='lxml')
@@ -46,22 +46,26 @@ while run:
             find_1 = re.findall(pattern1, str)
             find_2 = re.findall(pattern2, str)
             if len(find_1) and len(find_2):
+                link = vacancy.find('a')['href']
                 try:
-                    link = vacancy.find('a')['href']
                     compensation = vacancy.find('span', class_='bloko-header-section-3').text
-                    company_name = vacancy.find('a', class_='bloko-link bloko-link_kind-tertiary').text
-                    city = vacancy.find('div', {'data-qa':"vacancy-serp__vacancy-address", 'class':'bloko-text'}).text
                 except:
-                    print('Ошибка')
+                    compensation = None
+                company_name = vacancy.find('a', class_='bloko-link bloko-link_kind-tertiary').text
+                city = vacancy.find('div', {'data-qa':"vacancy-serp__vacancy-address", 'class':'bloko-text'}).text
+                print(f'Найдено на листе: {count + 1} link:{link}, compensation:{compensation}, company:{company_name}, city:{city}')
                 data = dict()
                 data['link'] = link
                 data['compensation'] = compensation
                 data['company_name'] = company_name
                 data['city'] = city
+                print(f'Cформирован словарь {data}')
                 parced.append(data)
+                print('Добавлено в список')
+
         count += 1
     else:
         run = False
 
-with open('parsed.json', 'w') as file:
-    json.dump(parced, file, indent=5)
+with open('parsed.json', 'w', encoding='utf8') as file:
+    json.dump(parced, file, indent=5, ensure_ascii=False)
