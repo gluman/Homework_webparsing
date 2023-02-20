@@ -26,7 +26,7 @@ def get_response(n):
 
 pattern1 = f'([Ff]lask)'
 pattern2 = f'([Dd]jango)'
-count = 14
+count = 0
 run = True
 parced = []
 while run:
@@ -69,3 +69,4 @@ while run:
 
 with open('parsed.json', 'w', encoding='utf8') as file:
     json.dump(parced, file, indent=5, ensure_ascii=False)
+    print('Записано в файл')
